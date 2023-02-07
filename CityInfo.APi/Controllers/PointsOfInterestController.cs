@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CityInfo.APi.Models;
 using CityInfo.APi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CityInfo.APi.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
+    [Authorize(Policy = "MustBeFromNigeria")]
     [ApiController]
     public class PointsOfInterestController : ControllerBase
     {
