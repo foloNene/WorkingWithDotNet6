@@ -21,14 +21,16 @@ namespace CityInfo.APi.Services
             return await _context.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
-        //For filetering
-        public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery)
+        //For filetering //Turple
+        public async Task<(IEnumerable<City>, PaginationMetadata) > GetCitiesAsync(
+            string? name, string? searchQuery, int pageNumber, int pageSize)
         {
-            if (string.IsNullOrEmpty(name)
-                && string.IsNullOrWhiteSpace(searchQuery))
-            {
-                return await GetCitiesAsync();
-            }
+            //No paging, just the list of all resources. 
+            //if (string.IsNullOrEmpty(name)
+            //    && string.IsNullOrWhiteSpace(searchQuery))
+            //{
+            //    return await GetCitiesAsync();
+            //}
 
             //collection due to deffered excursion
             var collection = _context.Cities as IQueryable<City>;
@@ -48,7 +50,21 @@ namespace CityInfo.APi.Services
                 || (a.Description != null && a.Description.Contains(searchQuery)));
             }
 
-            return await collection.OrderBy(c => c.Name).ToListAsync();
+            var totalItemCount = await collection.CountAsync();
+
+            var paginationMetadata = new PaginationMetadata(
+                totalItemCount, pageSize, pageNumber);
+            
+            
+            // return await collection.OrderBy(c => c.Name).ToListAsync();
+
+            //implement paging functionality
+            var collectionToReturn = await collection.OrderBy(c => c.Name)
+                .Skip(pageSize * (pageNumber - 1))
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (collectionToReturn, paginationMetadata);
 
      
         }
