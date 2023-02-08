@@ -77,5 +77,6 @@ C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\runtimes\wi
 C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\obj\Debug\net6.0\CityInfo.APi.csproj.AssemblyReference.cache
 C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\bin\Debug\net6.0\CityInfo.API.xml
+C:\Users\USER\Desktop\Project\CityInfo\CityInfo.APi\obj\Debug\net6.0\CityInfo.APi.csproj.AssemblyReference.cache

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CityInfo.APi</name>
+    </assembly>
+    <members>
+        <member name="M:CityInfo.APi.Controllers.CitiesController.GetCities(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get cities
+            </summary>
+            <param name="name"></param>
+            <param name="searchQuery"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CityInfo.APi.Controllers.CitiesController.GetCity(System.Int32,System.Boolean)">
+            <summary>
+            Get city by Id
+            </summary>
+            <param name="id">The id of the city to get</param>
+            <param name="includePointsOfInterest">whether or  not to include the points of interest</param>
+            <returns>An IActionResult</returns>
+            <response code= "200">Returns the requested City</response>
+        </member>
+        <member name="T:CityInfo.APi.Models.CityWithoutPointsOfInterestDto">
+            <summary>
+            A DTO for a city Without Points of interest
+            </summary>
+        </member>
+        <member name="P:CityInfo.APi.Models.CityWithoutPointsOfInterestDto.Id">
+            <summary>
+            The Id of the City
+            </summary>
+        </member>
+        <member name="P:CityInfo.APi.Models.CityWithoutPointsOfInterestDto.Name">
+            <summary>
+            The Name of the city of Interest
+            </summary>
+        </member>
+        <member name="P:CityInfo.APi.Models.CityWithoutPointsOfInterestDto.Description">
+            <summary>
+            The decription of the city of Interest.
+            </summary>
+        </member>
+    </members>
+</doc>
